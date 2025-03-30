@@ -1,9 +1,24 @@
+import { ModeToggle } from "@/components/ModelToogle";
+import { Button } from "@/components/ui/button";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    
+    <div className="">
+
+      <SignedOut>
+        <SignInButton>
+          <Button className="">
+            Sign In
+          </Button>
+        </SignInButton>
+        {/* <SignUpButton /> */}
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <ModeToggle/>
     </div>
   );
 }
